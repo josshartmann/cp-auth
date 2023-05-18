@@ -16,8 +16,9 @@ Este é um projeto em Python/Django que implementa um sistema de autenticação 
 
 2. Crie e ative um ambiente virtual:
 
-```python3 -m venv myenv```
-```source myenv/bin/activate```
+```python3 -m venv venv```
+
+```source venv/bin/activate```
 
 3. Instale as dependências do projeto:
 
