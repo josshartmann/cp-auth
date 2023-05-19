@@ -19,6 +19,7 @@ from django.urls import path, include
 
 from .api import facebook, google
 
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("profile/", include('cp_profile.urls')),
