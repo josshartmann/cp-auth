@@ -38,17 +38,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'dj_rest_auth',
-    'dj_rest_auth.registration',
-    'cp_profile',
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.facebook",
+    "allauth.socialaccount.providers.google",
+    "rest_framework",
+    "rest_framework.authtoken",
+    "dj_rest_auth",
+    "dj_rest_auth.registration",
+    "cp_profile",
 ]
 
 SITE_ID = 1
@@ -64,15 +64,13 @@ MIDDLEWARE = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
-    )
+    "DEFAULT_AUTHENTICATION_CLASSES": ("dj_rest_auth.jwt_auth.JWTCookieAuthentication",)
 }
 
 REST_AUTH = {
-    'USE_JWT': True,
-    'JWT_AUTH_COOKIE': 'my-app-auth',
-    'JWT_AUTH_REFRESH_COOKIE': 'my-refresh-token',
+    "USE_JWT": True,
+    "JWT_AUTH_COOKIE": "my-app-auth",
+    "JWT_AUTH_REFRESH_COOKIE": "my-refresh-token",
 }
 
 ROOT_URLCONF = "cp_auth.urls"
@@ -80,7 +78,7 @@ ROOT_URLCONF = "cp_auth.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ['templates'],
+        "DIRS": ["templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -107,30 +105,30 @@ DATABASES = {
 }
 
 AUTHENTICATION_BACKENDS = [
-    'allauth.account.auth_backends.AuthenticationBackend',
-    'django.contrib.auth.backends.ModelBackend',
+    "allauth.account.auth_backends.AuthenticationBackend",
+    "django.contrib.auth.backends.ModelBackend",
 ]
 
 SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'APP': {
-            'client_id': config("GOOGLE_PROVIDER_ID"),
-            'secret': config("GOOGLE_PROVIDER_KEY"),
+    "google": {
+        "APP": {
+            "client_id": config("GOOGLE_PROVIDER_ID"),
+            "secret": config("GOOGLE_PROVIDER_KEY"),
         }
     },
-    'facebook': {
-        'APP': {
-            'client_id': config("FACEBOOK_PROVIDER_ID"),
-            'secret': config("FACEBOOK_PROVIDER_KEY"),
+    "facebook": {
+        "APP": {
+            "client_id": config("FACEBOOK_PROVIDER_ID"),
+            "secret": config("FACEBOOK_PROVIDER_KEY"),
         }
-    }
+    },
 }
 
 
-ACCOUNT_AUTHENTICATION_METHOD="email"
-ACCOUNT_EMAIL_REQUIRED=True
-ACCOUNT_USERNAME_REQUIRED=False
-ACCOUNT_EMAIL_VERIFICATION=None
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = None
 
 ACCOUNT_SIGNUP_REDIRECT_URL = "/profile/"
 LOGIN_REDIRECT_URL = "/profile/"

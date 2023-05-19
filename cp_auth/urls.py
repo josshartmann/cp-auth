@@ -22,10 +22,12 @@ from .api import facebook, google
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("profile/", include('cp_profile.urls')),
-    path('accounts/', include('allauth.urls')),
-    path('dj-rest-auth/', include('dj_rest_auth.urls')),
-    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
-    path('dj-rest-auth/facebook/', facebook.FacebookLogin.as_view(), name='fb_login_api'),
-    path('dj-rest-auth/google/', google.GoogleLogin.as_view(), name='google_login_api'),
+    path("profile/", include("cp_profile.urls")),
+    path("accounts/", include("allauth.urls")),
+    path("dj-rest-auth/", include("dj_rest_auth.urls")),
+    path("dj-rest-auth/registration/", include("dj_rest_auth.registration.urls")),
+    path(
+        "dj-rest-auth/facebook/", facebook.FacebookLogin.as_view(), name="fb_login_api"
+    ),
+    path("dj-rest-auth/google/", google.GoogleLogin.as_view(), name="google_login_api"),
 ]
